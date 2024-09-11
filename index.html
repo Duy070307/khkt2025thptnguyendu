@@ -3,32 +3,223 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dự Án Khoa Học Kỹ Thuật</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Trang web về cây xanh - Tính chỉ số NVIDI</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            color: #333;
+            background-color: #f4f4f4;
+            height: 100%;
+            overflow-x: hidden;
+        }
+        header {
+            background-color: #2b7a0b;
+            padding: 15px 20px;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            z-index: 1000;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+        }
+        header .logo-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        header img {
+            width: 50px;
+            height: auto;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+        }
+        nav ul li {
+            margin: 5px 0;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        nav ul li a:hover {
+            color: #b8e994;
+        }
+        .section {
+            height: 100vh;
+            width: 100vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            padding: 20px;
+        }
+        #home {
+            background-image: url('trang1.png');
+        }
+        #about {
+            background-image: url('trang2.png');
+        }
+        #tool {
+            background-image: url('trang3.png');
+        }
+        .section h2 {
+            font-size: 2.5em;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+        }
+        footer {
+            background-color: #2b7a0b;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+        }
+        footer .info {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        footer .info div {
+            display: flex;
+            align-items: center;
+            margin: 0 10px;
+            transition: opacity 0.3s, color 0.3s;
+        }
+        footer .info div:hover {
+            opacity: 0.7;
+            color: #b8e994;
+        }
+        footer .info div i {
+            margin-right: 10px;
+        }
+        footer p {
+            margin: 0;
+            font-size: 0.9em;
+        }
+        #uploadForm {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #uploadForm input {
+            margin-bottom: 10px;
+        }
+
+        #uploadForm button {
+            background-color: #2b7a0b;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #uploadForm button:hover {
+            background-color: #1e5a08;
+        }
+    </style>
 </head>
 <body>
-    <div class="slider">
-        <div class="slide" id="slide1">
+
+    <header>
+        <div class="logo-container">
+            <img src="logo.png" alt="Logo"> <!-- Đường dẫn logo -->
+            <h1>THPT NGUYỄN DU - KHOA HỌC KỸ THUẬT 2025</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Trang chủ</a></li>
+                <li><a href="#about">Giới thiệu</a></li>
+                <li><a href="#tool">Công cụ</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home" class="section">
+        <div class="carousel-content">
+            <img src="logo.png" alt="Logo" class="logo"> <!-- Đường dẫn logo -->
             <h2>Chào các bạn</h2>
         </div>
-        <div class="slide" id="slide2">
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="carousel-content">
             <h2>Giới thiệu</h2>
             <p>Thông tin giới thiệu về Trần Đức Duy và Nguyễn Anh Phúc.</p>
         </div>
-        <div class="slide" id="slide3">
-            <h2>Công cụ</h2>
-            <p>Phần tính toán NVIDI và thêm ảnh từ máy tính sẽ được hiển thị tại đây.</p>
-            <input type="file" id="upload" accept="image/*">
-            <button id="process">Tính toán</button>
-            <div id="result"></div>
+    </section>
+
+    <!-- Tool Section -->
+    <section id="tool" class="section">
+        <div class="carousel-content">
+            <h2>Công cụ tính toán NVIDI</h2>
+            <p>Phần công cụ này dùng để tính chỉ số NVIDI, giúp bạn đánh giá sức khỏe cây trồng.</p>
+            <form id="uploadForm">
+                <input type="file" id="fileInput" accept="image/*" required>
+                <button type="submit">Tải ảnh lên</button>
+            </form>
+            <div id="result" style="margin-top: 20px;">
+                <p id="resultText">Chưa có kết quả</p>
+                <img id="resultImage" style="display: none; max-width: 100%; height: auto;">
+            </div>
         </div>
-    </div>
+    </section>
+
     <footer>
-        <div class="container">
-            <p>Số điện thoại: 089 867 0439</p>
-            <p>Email: tranducduy762@gmail.com</p>
+        <div class="info">
+            <div><i class="fas fa-phone"></i>089 867 0439</div>
+            <div><i class="fas fa-envelope"></i>tranducduy762@gmail.com</div>
         </div>
+        <p>© 2025 Trần Đức Duy & Nguyễn Anh Phúc - THPT Nguyễn Du</p>
     </footer>
-    <script src="script.js"></script>
+
+    <script>
+        document.getElementById('uploadForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const fileInput = document.getElementById('fileInput');
+            const file = fileInput.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const resultImage = document.getElementById('resultImage');
+                    resultImage.src = e.target.result;
+                    resultImage.style.display = 'block';
+                    document.getElementById('resultText').textContent = 'Ảnh đã được tải lên!';
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+    </script>
 </body>
 </html>
