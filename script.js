@@ -1,9 +1,33 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const toolsSection = document.querySelector('#tools');
+    const slides = document.querySelectorAll('.slide');
+    const prevButton = document.querySelector('#prev-slide');
+    const nextButton = document.querySelector('#next-slide');
     const uploadInput = document.querySelector('#upload');
     const processButton = document.querySelector('#process');
     const resultDiv = document.querySelector('#result');
-
+    
+    let currentSlide = 0;
+    
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            slide.classList.toggle('active', i === index);
+        });
+        currentSlide = index;
+    }
+    
+    prevButton.addEventListener('click', () => {
+        const newIndex = (currentSlide - 1 + slides.length) % slides.length;
+        showSlide(newIndex);
+    });
+    
+    nextButton.addEventListener('click', () => {
+        const newIndex = (currentSlide + 1) % slides.length;
+        showSlide(newIndex);
+    });
+    
+    // Initially show the first slide
+    showSlide(0);
+    
     processButton.addEventListener('click', () => {
         if (uploadInput.files.length === 0) {
             alert('Vui lòng chọn một ảnh.');
