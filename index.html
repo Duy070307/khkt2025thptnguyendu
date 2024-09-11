@@ -129,12 +129,13 @@
             background-color: rgba(0, 0, 0, 0.8);
             transform: scale(1.1);
         }
-        .content {
-            padding: 20px;
+        .section {
+            padding: 100px 20px;
+            min-height: 100vh;
+            box-sizing: border-box;
+            background-color: white;
             max-width: 1200px;
             margin: 20px auto;
-            text-align: center;
-            background-color: white;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
         footer {
@@ -185,11 +186,6 @@
         #uploadForm button:hover {
             background-color: #1e5a08;
         }
-        .section {
-            padding: 100px 20px;
-            min-height: 100vh;
-            box-sizing: border-box;
-        }
     </style>
 </head>
 <body>
@@ -210,9 +206,9 @@
 
     <!-- Carousel Section -->
     <section id="home" class="carousel">
-        <img src="trang1.png" alt="Image 1" class="active">
-        <img src="trang2.png" alt="Image 2">
-        <img src="trang3.png" alt="Image 3">
+        <img src="trang1.png" alt="Trang 1" class="active">
+        <img src="trang2.png" alt="Trang 2">
+        <img src="trang3.png" alt="Trang 3">
         <div class="carousel-content">
             <img src="logo.png" alt="Logo" class="logo"> <!-- Đường dẫn logo -->
             <h2 id="carousel-text">Chào các bạn</h2>
@@ -224,13 +220,13 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="section content">
+    <section id="about" class="section">
         <h2>Giới thiệu</h2>
         <p>Thông tin giới thiệu về Trần Đức Duy và Nguyễn Anh Phúc.</p>
     </section>
 
     <!-- Tool Section -->
-    <section id="tool" class="section content">
+    <section id="tool" class="section">
         <h2>Công cụ tính toán NVIDI</h2>
         <p>Phần công cụ này dùng để tính chỉ số NVIDI, giúp bạn đánh giá sức khỏe cây trồng.</p>
         
