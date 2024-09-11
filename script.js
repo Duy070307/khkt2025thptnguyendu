@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const newIndex = (currentSlide - 1 + slides.length) % slides.length;
             showSlide(newIndex);
         }
+        event.preventDefault(); // Prevent default scrolling behavior
     }
 
     document.querySelector('.slider').addEventListener('wheel', handleScroll);
