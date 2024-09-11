@@ -14,16 +14,20 @@
             color: #333;
             background-color: #f4f4f4;
             height: 100%;
-            overflow-x: hidden; /* Ngăn cuộn ngang */
         }
         header {
             background-color: #2b7a0b;
             padding: 15px 20px;
             color: white;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
             align-items: center;
             text-align: center;
+            z-index: 1000;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
         }
         header .logo-container {
             display: flex;
@@ -39,17 +43,20 @@
             font-size: 1.5em;
             font-weight: bold;
         }
+        nav {
+            width: 100%;
+        }
         nav ul {
             list-style-type: none;
             margin: 0;
             padding: 0;
             display: flex;
             justify-content: center;
-            align-items: center;
             width: 100%;
+            background-color: #2b7a0b; /* Để menu nổi bật trên nền */
         }
         nav ul li {
-            margin: 0 15px;
+            margin: 0 20px;
         }
         nav ul li a {
             text-decoration: none;
@@ -65,12 +72,15 @@
             width: 100%;
             height: 100vh;
             overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             background-size: cover;
             background-position: center;
         }
         .carousel img {
             width: 100%;
-            height: 100vh;
+            height: 100%;
             object-fit: cover;
             position: absolute;
             top: 0;
@@ -89,7 +99,7 @@
             text-align: center;
         }
         .carousel-content img.logo {
-            width: 100px; /* Kích thước logo */
+            width: 100px;
             height: auto;
             margin-bottom: 20px;
         }
@@ -119,28 +129,14 @@
             background-color: rgba(0, 0, 0, 0.8);
             transform: scale(1.1);
         }
-        .content {
-            padding: 20px;
+        .section {
+            padding: 100px 20px;
+            min-height: 100vh;
+            box-sizing: border-box;
+            background-color: white;
             max-width: 1200px;
             margin: 20px auto;
-            text-align: center;
-            background-color: white;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            position: relative;
-            overflow: hidden;
-        }
-        .animated-background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('https://media.giphy.com/media/3oEduVgkeS03MZsHL6/giphy.gif'); /* Ảnh động cây */
-            background-size: cover;
-            background-repeat: no-repeat;
-            z-index: 0;
-            opacity: 0.3;
-            animation: pulse 10s infinite;
         }
         footer {
             background-color: #2b7a0b;
@@ -150,14 +146,13 @@
         }
         footer .info {
             display: flex;
-            justify-content: center;
+            justify-content: space-around;
             align-items: center;
             margin-bottom: 10px;
         }
         footer .info div {
             display: flex;
             align-items: center;
-            margin: 0 10px;
             transition: opacity 0.3s, color 0.3s;
         }
         footer .info div:hover {
@@ -191,17 +186,6 @@
         #uploadForm button:hover {
             background-color: #1e5a08;
         }
-        @keyframes pulse {
-            0% {
-                opacity: 0.3;
-            }
-            50% {
-                opacity: 0.5;
-            }
-            100% {
-                opacity: 0.3;
-            }
-        }
     </style>
 </head>
 <body>
@@ -222,9 +206,9 @@
 
     <!-- Carousel Section -->
     <section id="home" class="carousel">
-        <img src="trang1.png" alt="Image 1" class="active">
-        <img src="trang2.png" alt="Image 2">
-        <img src="trang3.png" alt="Image 3">
+        <img src="trang1.png" alt="Trang 1" class="active">
+        <img src="trang2.png" alt="Trang 2">
+        <img src="trang3.png" alt="Trang 3">
         <div class="carousel-content">
             <img src="logo.png" alt="Logo" class="logo"> <!-- Đường dẫn logo -->
             <h2 id="carousel-text">Chào các bạn</h2>
@@ -236,15 +220,13 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="content">
-        <div class="animated-background"></div>
+    <section id="about" class="section">
         <h2>Giới thiệu</h2>
         <p>Thông tin giới thiệu về Trần Đức Duy và Nguyễn Anh Phúc.</p>
     </section>
 
     <!-- Tool Section -->
-    <section id="tool" class="content">
-        <div class="animated-background"></div>
+    <section id="tool" class="section">
         <h2>Công cụ tính toán NVIDI</h2>
         <p>Phần công cụ này dùng để tính chỉ số NVIDI, giúp bạn đánh giá sức khỏe cây trồng.</p>
         
@@ -263,29 +245,29 @@
 
     <footer>
         <div class="info">
-            <div><i class="fas fa-phone"></i> 089 867 0439</div>
-            <div><i class="fas fa-envelope"></i> tranducduy762@gmail.com</div>
+            <div><i class="fas fa-phone"></i>089 867 0439</div>
+            <div><i class="fas fa-envelope"></i>tranducduy762@gmail.com</div>
         </div>
-        <p>&copy; 2024 THPT Nguyễn Du. All rights reserved.</p>
+        <p>© 2025 Trần Đức Duy & Nguyễn Anh Phúc - THPT Nguyễn Du</p>
     </footer>
 
     <script>
-        // JavaScript for carousel functionality
         let currentSlide = 0;
         const slides = document.querySelectorAll('.carousel img');
+        const texts = [
+            "Chào các bạn",
+            "Trần Đức Duy - Nguyễn Anh Phúc KHKT 2025"
+        ];
 
         function showSlide(index) {
             slides.forEach((slide, i) => {
-                slide.classList.remove('active');
                 if (i === index) {
                     slide.classList.add('active');
+                    document.getElementById('carousel-text').textContent = texts[i];
+                } else {
+                    slide.classList.remove('active');
                 }
             });
-        }
-
-        function nextSlide() {
-            currentSlide = (currentSlide + 1) % slides.length;
-            showSlide(currentSlide);
         }
 
         function prevSlide() {
@@ -293,28 +275,28 @@
             showSlide(currentSlide);
         }
 
-        document.querySelector('.carousel-controls button:nth-child(1)').addEventListener('click', prevSlide);
-        document.querySelector('.carousel-controls button:nth-child(2)').addEventListener('click', nextSlide);
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
 
-        // JavaScript for image upload and display
         document.getElementById('uploadForm').addEventListener('submit', function(event) {
             event.preventDefault();
             const fileInput = document.getElementById('fileInput');
-            const resultImage = document.getElementById('resultImage');
-            const resultText = document.getElementById('resultText');
-
-            if (fileInput.files && fileInput.files[0]) {
+            const file = fileInput.files[0];
+            if (file) {
                 const reader = new FileReader();
                 reader.onload = function(e) {
+                    const resultImage = document.getElementById('resultImage');
                     resultImage.src = e.target.result;
                     resultImage.style.display = 'block';
-                    resultText.textContent = 'Ảnh đã được tải lên';
+                    document.getElementById('resultText').textContent = 'Ảnh đã được tải lên!';
                 };
-                reader.readAsDataURL(fileInput.files[0]);
-            } else {
-                resultText.textContent = 'Vui lòng chọn một ảnh để tải lên';
+                reader.readAsDataURL(file);
             }
         });
+
+        showSlide(currentSlide);
     </script>
 </body>
 </html>
