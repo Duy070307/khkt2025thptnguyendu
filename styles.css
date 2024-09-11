@@ -3,35 +3,33 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f0f0f0;
-    overflow: hidden; /* Prevent scroll bars on the body */
-}
-
-.container {
-    height: 100vh;
-    overflow: hidden; /* Hide overflow to prevent scroll bars */
+    overflow: hidden; /* Prevent default scrolling behavior */
 }
 
 .slider {
-    height: 100%;
-    overflow-y: scroll; /* Enable vertical scrolling */
-    scroll-snap-type: y mandatory; /* Snap to each slide */
+    height: 100vh; /* Full viewport height */
+    width: 100vw; /* Full viewport width */
+    overflow: hidden; /* Hide scrollbar */
+    position: relative;
 }
 
 .slide {
-    height: 100vh;
+    height: 100%;
     width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     background-size: cover;
     background-position: center;
-    scroll-snap-align: start; /* Align slides to the start of the container */
-    transition: opacity 0.5s ease-in-out;
-    opacity: 0;
+    transition: transform 0.5s ease;
+    opacity: 0; /* Initially hide all slides */
 }
 
 .slide.active {
-    opacity: 1;
+    opacity: 1; /* Show active slide */
 }
 
 #slide1 {
