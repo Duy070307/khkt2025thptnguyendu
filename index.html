@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang web về cây xanh - Tính chỉ số NVIDI</title>
+    <title>KHOA HỌC KỸ THUẬT 2025</title>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
@@ -14,20 +14,16 @@
             color: #333;
             background-color: #f4f4f4;
             height: 100%;
+            overflow-x: hidden; /* Ngăn cuộn ngang */
         }
         header {
             background-color: #2b7a0b;
             padding: 15px 20px;
             color: white;
             display: flex;
-            flex-direction: column;
+            justify-content: center;
             align-items: center;
             text-align: center;
-            z-index: 1000;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            left: 0;
         }
         header .logo-container {
             display: flex;
@@ -43,20 +39,17 @@
             font-size: 1.5em;
             font-weight: bold;
         }
-        nav {
-            width: 100%;
-        }
         nav ul {
             list-style-type: none;
             margin: 0;
             padding: 0;
             display: flex;
             justify-content: center;
+            align-items: center;
             width: 100%;
-            background-color: #2b7a0b; /* Để menu nổi bật trên nền */
         }
         nav ul li {
-            margin: 0 20px;
+            margin: 0 15px;
         }
         nav ul li a {
             text-decoration: none;
@@ -72,15 +65,12 @@
             width: 100%;
             height: 100vh;
             overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             background-size: cover;
             background-position: center;
         }
         .carousel img {
             width: 100%;
-            height: 100%;
+            height: 100vh;
             object-fit: cover;
             position: absolute;
             top: 0;
@@ -99,7 +89,7 @@
             text-align: center;
         }
         .carousel-content img.logo {
-            width: 100px;
+            width: 100px; /* Kích thước logo */
             height: auto;
             margin-bottom: 20px;
         }
@@ -129,41 +119,14 @@
             background-color: rgba(0, 0, 0, 0.8);
             transform: scale(1.1);
         }
-        .section {
-            padding: 100px 20px;
-            min-height: 100vh;
-            box-sizing: border-box;
-            background-color: white;
+        .content {
+            padding: 20px;
             max-width: 1200px;
             margin: 20px auto;
+            text-align: center;
+            background-color: white;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             position: relative;
-        }
-        .tool-content {
-            font-size: 1.2em;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        #uploadForm {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            font-size: 1.2em;
-        }
-        #uploadForm input {
-            margin-bottom: 10px;
-        }
-        #uploadForm button {
-            background-color: #2b7a0b;
-            border: none;
-            color: white;
-            padding: 15px 25px;
-            font-size: 1em;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        #uploadForm button:hover {
-            background-color: #1e5a08;
         }
         .animated-background {
             position: absolute;
@@ -171,17 +134,12 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('animated-plants.gif'); /* Đổi tên và đường dẫn hình ảnh động của bạn */
+            background-image: url('https://media.giphy.com/media/3oEduVgkeS03MZsHL6/giphy.gif'); /* Ảnh động cây */
             background-size: cover;
             background-repeat: no-repeat;
             z-index: 0;
             opacity: 0.3;
             animation: pulse 10s infinite;
-        }
-        @keyframes pulse {
-            0% { opacity: 0.3; }
-            50% { opacity: 0.7; }
-            100% { opacity: 0.3; }
         }
         footer {
             background-color: #2b7a0b;
@@ -191,13 +149,14 @@
         }
         footer .info {
             display: flex;
-            justify-content: space-around;
+            justify-content: center;
             align-items: center;
             margin-bottom: 10px;
         }
         footer .info div {
             display: flex;
             align-items: center;
+            margin: 0 10px;
             transition: opacity 0.3s, color 0.3s;
         }
         footer .info div:hover {
@@ -210,6 +169,26 @@
         footer p {
             margin: 0;
             font-size: 0.9em;
+        }
+        #uploadForm {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        #uploadForm input {
+            margin-bottom: 10px;
+        }
+        #uploadForm button {
+            background-color: #2b7a0b;
+            border: none;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        #uploadForm button:hover {
+            background-color: #1e5a08;
         }
     </style>
 </head>
@@ -231,11 +210,11 @@
 
     <!-- Carousel Section -->
     <section id="home" class="carousel">
-        <img src="trang1.png" alt="Trang 1" class="active">
-        <img src="trang2.png" alt="Trang 2">
-        <img src="trang3.png" alt="Trang 3">
+        <img src="trang1.png" alt="Image 1" class="active">
+        <img src="trang2.png" alt="Image 2">
+        <img src="trang3.png" alt="Image 3">
         <div class="carousel-content">
-            <img src="logo.png" alt="Logo" class="logo"> <!-- Đường dẫn logo -->
+            <img src="logo1.png" alt="Logo" class="logo"> <!-- Đường dẫn logo -->
             <h2 id="carousel-text">Chào các bạn</h2>
         </div>
         <div class="carousel-controls">
@@ -245,18 +224,18 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="section">
+    <section id="about" class="content">
+        <div class="animated-background"></div>
         <h2>Giới thiệu</h2>
         <p>Thông tin giới thiệu về Trần Đức Duy và Nguyễn Anh Phúc.</p>
     </section>
 
     <!-- Tool Section -->
-    <section id="tool" class="section">
-        <div class="animated-background"></div> <!-- Hình nền động -->
-        <div class="tool-content">
-            <h2>Công cụ tính toán NVIDI</h2>
-            <p>Phần công cụ này dùng để tính chỉ số NVIDI, giúp bạn đánh giá sức khỏe cây trồng.</p>
-        </div>
+    <section id="tool" class="content">
+        <div class="animated-background"></div>
+        <h2>Công cụ tính toán NVIDI</h2>
+        <p>Phần công cụ này dùng để tính chỉ số NVIDI, giúp bạn đánh giá sức khỏe cây trồng.</p>
+        
         <!-- Form to upload image -->
         <form id="uploadForm">
             <input type="file" id="fileInput" accept="image/*" required>
@@ -272,34 +251,24 @@
 
     <footer>
         <div class="info">
-            <div><i class="fas fa-phone"></i>089 867 0439</div>
-            <div><i class="fas fa-envelope"></i>tranducduy762@gmail.com</div>
+            <div><i class="fas fa-phone"></i> 089 867 0439</div>
+            <div><i class="fas fa-envelope"></i> tranducduy762@gmail.com</div>
         </div>
-        <p>© 2025 Trần Đức Duy & Nguyễn Anh Phúc - THPT Nguyễn Du</p>
+        <p>&copy; 2025 THPT Nguyễn Du. All rights reserved.</p>
     </footer>
 
     <script>
+        // JavaScript for carousel functionality
         let currentSlide = 0;
         const slides = document.querySelectorAll('.carousel img');
-        const texts = [
-            "Chào các bạn",
-            "Trần Đức Duy - Nguyễn Anh Phúc KHKT 2025"
-        ];
 
         function showSlide(index) {
             slides.forEach((slide, i) => {
+                slide.classList.remove('active');
                 if (i === index) {
                     slide.classList.add('active');
-                    document.getElementById('carousel-text').textContent = texts[i];
-                } else {
-                    slide.classList.remove('active');
                 }
             });
-        }
-
-        function prevSlide() {
-            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-            showSlide(currentSlide);
         }
 
         function nextSlide() {
@@ -307,23 +276,33 @@
             showSlide(currentSlide);
         }
 
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        document.querySelector('.carousel-controls button:nth-child(1)').addEventListener('click', prevSlide);
+        document.querySelector('.carousel-controls button:nth-child(2)').addEventListener('click', nextSlide);
+
+        // JavaScript for image upload and display
         document.getElementById('uploadForm').addEventListener('submit', function(event) {
             event.preventDefault();
             const fileInput = document.getElementById('fileInput');
-            const file = fileInput.files[0];
-            if (file) {
+            const resultImage = document.getElementById('resultImage');
+            const resultText = document.getElementById('resultText');
+
+            if (fileInput.files && fileInput.files[0]) {
                 const reader = new FileReader();
                 reader.onload = function(e) {
-                    const resultImage = document.getElementById('resultImage');
                     resultImage.src = e.target.result;
                     resultImage.style.display = 'block';
-                    document.getElementById('resultText').textContent = 'Ảnh đã được tải lên!';
+                    resultText.textContent = 'Ảnh đã được tải lên';
                 };
-                reader.readAsDataURL(file);
+                reader.readAsDataURL(fileInput.files[0]);
+            } else {
+                resultText.textContent = 'Vui lòng chọn một ảnh để tải lên';
             }
         });
-
-        showSlide(currentSlide);
     </script>
 </body>
 </html>
