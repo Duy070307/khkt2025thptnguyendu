@@ -3,109 +3,187 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vật Lý - Tổ 4 Lớp 12A3</title>
+    <title>Ứng Dụng Vật Lý - Tổ 4 Lớp 12A3</title>
     <style>
-        body {
+        * {
             margin: 0;
-            font-family: Arial, sans-serif;
-            background: linear-gradient(to right, #000428, #004e92);
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        header {
+            background-color: #2d3e50;
             color: white;
+            padding: 20px 0;
             text-align: center;
         }
-        header {
-            padding: 20px;
-            font-size: 2em;
-            font-weight: bold;
-            background: rgba(0, 0, 0, 0.5);
+        
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
         }
-        .content {
+        
+        nav ul {
+            list-style: none;
             display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px;
+            justify-content: center;
+            padding: 10px 0;
+            background-color: #444;
         }
-        .box {
-            width: 80%;
-            padding: 20px;
-            margin: 20px;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        
+        nav ul li {
+            margin: 0 15px;
         }
-        .footer {
-            margin-top: 20px;
-            padding: 10px;
-            background: rgba(0, 0, 0, 0.5);
-            font-size: 1em;
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2rem;
         }
-        img {
+        
+        nav ul li a:hover {
+            color: #f4a261;
+            text-decoration: underline;
+        }
+        
+        section {
+            padding: 40px 10%;
+            margin: 20px 0;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+        
+        section:hover {
+            transform: scale(1.05);
+        }
+        
+        section img {
             width: 100%;
-            border-radius: 10px;
-            margin-top: 10px;
+            height: auto;
+            display: block;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: #2d3e50;
+        }
+
+        p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        ul {
+            list-style: none;
+            margin-top: 20px;
+            padding-left: 20px;
+        }
+
+        ul li {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+        }
+
+        footer {
+            background-color: #2d3e50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        footer p {
+            font-size: 1rem;
         }
     </style>
 </head>
 <body>
-    <header>Vật Lý - Tổ 4 Lớp 12A3</header>
-    <div class="content">
-        <div class="box">
-            <h2>Giới thiệu</h2>
-            <p>Vật lý là môn khoa học khám phá những quy luật của tự nhiên, giúp con người hiểu rõ hơn về thế giới xung quanh.</p>
-        </div>
-        <div class="box">
-            <h2>Ứng dụng của các tia bức xạ trong y học</h2>
-            <p>Các tia bức xạ như tia X, tia gamma, tia beta có vai trò quan trọng trong y học:</p>
+    <header>
+        <h1>Ứng Dụng Vật Lý - Tổ 4 Lớp 12A3</h1>
+        <nav>
             <ul>
-                <li><b>Tia X:</b> Được sử dụng trong chẩn đoán hình ảnh như chụp X-quang, CT-scan.</li>
-                <li><b>Tia Gamma:</b> Dùng trong xạ trị ung thư để tiêu diệt tế bào ác tính.</li>
-                <li><b>Tia Beta:</b> Ứng dụng trong điều trị bệnh về tuyến giáp.</li>
+                <li><a href="#uv">Tia UV và tác hại</a></li>
+                <li><a href="#xray">Tia X và ứng dụng</a></li>
+                <li><a href="#ultrasound">Sóng siêu âm</a></li>
+                <li><a href="#mri">Chụp công hưởng từ MRI</a></li>
+                <li><a href="#team">Thành viên nhóm</a></li>
             </ul>
-            <img src="https://easterngroup.com.vn/uploads/chup-x-quang-1280x720.jpeg" alt="Chụp X-quang">
-        </div>
-        <div class="box">
-            <h2>Tác hại của tia UV đối với da và mắt</h2>
-            <p><b>Tia UV (tia cực tím)</b> có thể gây nhiều tác hại nghiêm trọng đối với con người:</p>
-            <h3>Đối với da:</h3>
-            <ul>
-                <li>Gây cháy nắng, làm da đỏ, rát và phồng rộp.</li>
-                <li>Gây lão hóa sớm, hình thành nếp nhăn và đốm nâu.</li>
-                <li>Tăng nguy cơ ung thư da, đặc biệt là u hắc tố ác tính.</li>
-            </ul>
-            <h3>Đối với mắt:</h3>
-            <ul>
-                <li>Gây viêm giác mạc, đỏ và đau mắt.</li>
-                <li>Tăng nguy cơ đục thủy tinh thể, có thể dẫn đến mù lòa.</li>
-                <li>Tác động tiêu cực đến võng mạc, gây thoái hóa điểm vàng.</li>
-            </ul>
-            <img src="https://mediworld.vn/wp-content/uploads/2021/10/Nhung-tac-hai-cua-tia-uv-ma-ban-nen-biet.jpg" alt="Tác hại của tia UV">
-        </div>
-        <div class="box">
-            <h2>Ứng dụng của sóng siêu âm, chụp cộng hưởng từ trong y học</h2>
-            <ul>
-                <li><b>Sóng siêu âm:</b> Kiểm tra thai nhi, phát hiện bệnh về tim, gan, thận mà không gây hại.</li>
-                <li><b>Chụp cộng hưởng từ (MRI):</b> Sử dụng từ trường mạnh để chụp chi tiết não, tủy sống và cơ quan nội tạng.</li>
-            </ul>
-            <img src="https://lh6.googleusercontent.com/proxy/-d1vz4pC9nuNioSZUckS2KGJ6FFc8d6T8UVYq4o5SnwOzUElazLBjx4R6AgrnjOxpiobMbiC-ugxVpRzl1XaofkSLj7A3s1SDgbOf_WPIry9t85hsqmFSpPNd2Hbl9xFVfWeDZ6X5VWTTanTM93TAYv2ymCmcutm9HAF-mA" alt="Sóng siêu âm">
-            <img src="https://login.medlatec.vn//ImagePath/images/20200328/20200328_nguyen-ly-chup-cong-huong-tu-01.jpg" alt="Chụp cộng hưởng từ MRI">
-        </div>
-        <div class="box">
-            <h2>Thành viên tổ 4</h2>
-            <ul>
-                <li>Trần Đức Duy</li>
-                <li>Lâm Chân Tú</li>
-                <li>Phạm Thị Như Ý</li>
-                <li>Nguyễn Anh Phúc</li>
-                <li>Trần Vĩnh Phát</li>
-                <li>Nguyễn Nhật Đan</li>
-                <li>Phạm Minh Triết</li>
-                <li>Đặng Xuân Hùng Việt</li>
-                <li>Nguyễn Trung Huy</li>
-                <li>Thang Băng Băng</li>
-                <li>Vũ Ngọc Tuyết Trân</li>
-                <li>Nguyễn Trần Gia Huy</li>
-            </ul>
-        </div>
-    </div>
-    <div class="footer">&copy; 2025 Tổ 4 - 12A3</div>
+        </nav>
+    </header>
+
+    <section id="uv">
+        <h2>Tia UV và Tác Hại</h2>
+        <p>Tia UV (UltraViolet) là bức xạ điện từ có bước sóng ngắn hơn tia sáng nhìn thấy nhưng dài hơn tia X. Tia UV có thể gây tổn hại cho da và mắt, đặc biệt là đối với những người không bảo vệ đầy đủ.</p>
+        <ul>
+            <li>Gây cháy nắng, bỏng da và làm lão hóa da sớm.</li>
+            <li>Gây tổn thương thủy tinh thể và các bệnh về mắt.</li>
+            <li>Tia UV có thể làm tăng nguy cơ mắc ung thư da nếu tiếp xúc lâu dài mà không có biện pháp bảo vệ.</li>
+        </ul>
+        <img src="https://mediworld.vn/wp-content/uploads/2021/10/Nhung-tac-hai-cua-tia-uv-ma-ban-nen-biet.jpg" alt="Tác hại của tia UV">
+    </section>
+
+    <section id="xray">
+        <h2>Tia X và Ứng Dụng</h2>
+        <p>Tia X là một dạng tia bức xạ có năng lượng cao được sử dụng rộng rãi trong y học để chẩn đoán các bệnh lý. Tia X có thể xuyên qua cơ thể và tạo ra hình ảnh các bộ phận bên trong, giúp bác sĩ phát hiện các vấn đề sức khỏe như gãy xương, ung thư, và các tổn thương nội tạng.</p>
+        <ul>
+            <li>Chẩn đoán các bệnh lý như ung thư, gãy xương, và các bệnh tim mạch.</li>
+            <li>Ứng dụng trong các kỹ thuật chụp X-quang và CT-scan.</li>
+        </ul>
+        <img src="https://easterngroup.com.vn/uploads/chup-x-quang-1280x720.jpeg" alt="Chụp X-quang">
+    </section>
+
+    <section id="ultrasound">
+        <h2>Sóng Siêu Âm và Ứng Dụng</h2>
+        <p>Sóng siêu âm là những sóng âm có tần số cao hơn giới hạn của tai người. Chúng được sử dụng trong y học để kiểm tra các mô mềm, đặc biệt là trong việc theo dõi thai kỳ và kiểm tra các cơ quan như tim, gan, thận.</p>
+        <ul>
+            <li>Chẩn đoán bệnh lý qua siêu âm thai và siêu âm cơ thể.</li>
+            <li>Không có tác dụng xâm lấn và an toàn cho bệnh nhân.</li>
+        </ul>
+        <img src="https://lh6.googleusercontent.com/proxy/-d1vz4pC9nuNioSZUckS2KGJ6FFc8d6T8UVYq4o5SnwOzUElazLBjx4R6AgrnjOxpiobMbiC-ugxVpRzl1XaofkSLj7A3s1SDgbOf_WPIry9t85hsqmFSpPNd2Hbl9xFVfWeDZ6X5VWTTanTM93TAYv2ymCmcutm9HAF-mA" alt="Sóng siêu âm">
+    </section>
+
+    <section id="mri">
+        <h2>Chụp Công Hưởng Từ MRI</h2>
+        <p>Chụp công hưởng từ (MRI) sử dụng từ trường mạnh và sóng radio để tạo ra hình ảnh chi tiết về các bộ phận bên trong cơ thể mà không cần sử dụng tia bức xạ. MRI thường được sử dụng để kiểm tra các vấn đề về não, cột sống, và khớp.</p>
+        <ul>
+            <li>Không sử dụng tia X, an toàn hơn cho cơ thể.</li>
+            <li>Chẩn đoán các bệnh lý về não bộ, cột sống, khớp và các mô mềm.</li>
+        </ul>
+        <img src="https://login.medlatec.vn//ImagePath/images/20200328/20200328_nguyen-ly-chup-cong-huong-tu-01.jpg" alt="Chụp công hưởng từ MRI">
+    </section>
+
+    <section id="team">
+        <h2>Thành Viên Nhóm</h2>
+        <p>Điểm thường xuyên này rất quan trọng đối với nhóm em. Cảm ơn cô.</p>
+        <ul>
+            <li>Trần Đức Duy</li>
+            <li>Lâm Chân Tú</li>
+            <li>Phạm Thị Như Ý</li>
+            <li>Nguyễn Anh Phúc</li>
+            <li>Trần Vĩnh Phát</li>
+            <li>Nguyễn Nhật Đan</li>
+            <li>Phạm Minh Triết</li>
+            <li>Đặng Xuân Hùng Việt</li>
+            <li>Nguyễn Trung Huy</li>
+            <li>Thang Băng Băng</li>
+            <li>Vũ Ngọc Tuyết Trân</li>
+            <li>Nguyễn Trần Gia Huy</li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Tổ 4 Lớp 12A3 - 10 Điểm Nha .</p>
+    </footer>
 </body>
 </html>
