@@ -3,113 +3,109 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KHOA HỌC KỸ THUẬT 2025</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Vật Lý - Tổ 4 Lớp 12A3</title>
     <style>
-        body, html { margin: 0; padding: 0; font-family: 'Roboto', sans-serif; color: #333; background-color: #f4f4f4; height: 100%; }
-        header { background-color: #2b7a0b; padding: 15px 20px; color: white; text-align: center; z-index: 1000; position: fixed; width: 100%; top: 0; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); }
-        header img { width: 50px; height: auto; }
-        header h1 { margin: 0; font-size: 1.5em; font-weight: bold; }
-        nav ul { list-style-type: none; display: flex; justify-content: center; background-color: #2b7a0b; padding: 0; }
-        nav ul li { margin: 0 20px; }
-        nav ul li a { text-decoration: none; color: white; font-weight: bold; transition: color 0.3s; }
-        nav ul li a:hover { color: #b8e994; }
-        .carousel { position: relative; width: 100%; height: 100vh; display: flex; justify-content: center; align-items: center; background-size: cover; background-position: center; }
-        .carousel img { width: 100%; height: 100%; object-fit: cover; position: absolute; top: 0; left: 0; opacity: 0; transition: opacity 1s ease; }
-        .carousel img.active { opacity: 1; }
-        .carousel-content { position: relative; z-index: 2; color: white; text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); }
-        .carousel h2 { font-size: 3em; margin: 0; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); }
-        .carousel-controls { position: absolute; top: 50%; width: 100%; display: flex; justify-content: space-between; transform: translateY(-50%); }
-        .carousel-controls button { background-color: rgba(0, 0, 0, 0.5); border: none; color: white; font-size: 2em; padding: 10px; cursor: pointer; transition: background-color 0.3s ease, transform 0.3s ease; }
-        .carousel-controls button:hover { background-color: rgba(0, 0, 0, 0.8); transform: scale(1.1); }
-        #uploadForm { display: flex; flex-direction: column; align-items: center; }
-        #uploadForm button { background-color: #2b7a0b; border: none; color: white; padding: 10px 20px; font-size: 1em; cursor: pointer; transition: background-color 0.3s ease; }
-        #uploadForm button:hover { background-color: #1e5a08; }
-        footer { background-color: #2b7a0b; color: white; text-align: center; padding: 20px 0; }
-        footer .info { display: flex; justify-content: space-around; }
-        footer .info div:hover { opacity: 0.7; color: #b8e994; }
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #000428, #004e92);
+            color: white;
+            text-align: center;
+        }
+        header {
+            padding: 20px;
+            font-size: 2em;
+            font-weight: bold;
+            background: rgba(0, 0, 0, 0.5);
+        }
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        .box {
+            width: 80%;
+            padding: 20px;
+            margin: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+        .footer {
+            margin-top: 20px;
+            padding: 10px;
+            background: rgba(0, 0, 0, 0.5);
+            font-size: 1em;
+        }
+        img {
+            width: 100%;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
     </style>
 </head>
 <body>
-    <header>
-        <img src="logo.png" alt="Logo"> 
-        <h1>THPT NGUYỄN DU - KHOA HỌC KỸ THUẬT 2025</h1>
-        <nav>
+    <header>Vật Lý - Tổ 4 Lớp 12A3</header>
+    <div class="content">
+        <div class="box">
+            <h2>Giới thiệu</h2>
+            <p>Vật lý là môn khoa học khám phá những quy luật của tự nhiên, giúp con người hiểu rõ hơn về thế giới xung quanh.</p>
+        </div>
+        <div class="box">
+            <h2>Ứng dụng của các tia bức xạ trong y học</h2>
+            <p>Các tia bức xạ như tia X, tia gamma, tia beta có vai trò quan trọng trong y học:</p>
             <ul>
-                <li><a href="#home">Trang chủ</a></li>
-                <li><a href="#tool">Công cụ</a></li>
+                <li><b>Tia X:</b> Được sử dụng trong chẩn đoán hình ảnh như chụp X-quang, CT-scan.</li>
+                <li><b>Tia Gamma:</b> Dùng trong xạ trị ung thư để tiêu diệt tế bào ác tính.</li>
+                <li><b>Tia Beta:</b> Ứng dụng trong điều trị bệnh về tuyến giáp.</li>
             </ul>
-        </nav>
-    </header>
-
-    <section id="home" class="carousel">
-        <img src="trang1.png" alt="Trang 1" class="active">
-        <img src="trang2.png" alt="Trang 2">
-        <img src="trang3.png" alt="Trang 3">
-        <div class="carousel-content">
-            <h2 id="carousel-text">DỰ ÁN KHOA HỌC KỸ THUẬT 2025</h2>
+            <img src="https://easterngroup.com.vn/uploads/chup-x-quang-1280x720.jpeg" alt="Chụp X-quang">
         </div>
-        <div class="carousel-controls">
-            <button onclick="prevSlide()">&#10094;</button>
-            <button onclick="nextSlide()">&#10095;</button>
+        <div class="box">
+            <h2>Tác hại của tia UV đối với da và mắt</h2>
+            <p><b>Tia UV (tia cực tím)</b> có thể gây nhiều tác hại nghiêm trọng đối với con người:</p>
+            <h3>Đối với da:</h3>
+            <ul>
+                <li>Gây cháy nắng, làm da đỏ, rát và phồng rộp.</li>
+                <li>Gây lão hóa sớm, hình thành nếp nhăn và đốm nâu.</li>
+                <li>Tăng nguy cơ ung thư da, đặc biệt là u hắc tố ác tính.</li>
+            </ul>
+            <h3>Đối với mắt:</h3>
+            <ul>
+                <li>Gây viêm giác mạc, đỏ và đau mắt.</li>
+                <li>Tăng nguy cơ đục thủy tinh thể, có thể dẫn đến mù lòa.</li>
+                <li>Tác động tiêu cực đến võng mạc, gây thoái hóa điểm vàng.</li>
+            </ul>
+            <img src="https://mediworld.vn/wp-content/uploads/2021/10/Nhung-tac-hai-cua-tia-uv-ma-ban-nen-biet.jpg" alt="Tác hại của tia UV">
         </div>
-    </section>
-
-    <section id="tool">
-        <h2>Công cụ tính toán NVIDI (THỬ NGHIỆM)</h2>
-        <form id="uploadForm">
-            <input type="file" id="fileInput" accept="image/*" required>
-            <button type="submit">Tải ảnh lên</button>
-        </form>
-        <div id="result">
-            <p id="resultText">Chưa có kết quả</p>
-            <img id="resultImage" style="max-width: 100%; display: none;">
+        <div class="box">
+            <h2>Ứng dụng của sóng siêu âm, chụp cộng hưởng từ trong y học</h2>
+            <ul>
+                <li><b>Sóng siêu âm:</b> Kiểm tra thai nhi, phát hiện bệnh về tim, gan, thận mà không gây hại.</li>
+                <li><b>Chụp cộng hưởng từ (MRI):</b> Sử dụng từ trường mạnh để chụp chi tiết não, tủy sống và cơ quan nội tạng.</li>
+            </ul>
+            <img src="https://lh6.googleusercontent.com/proxy/-d1vz4pC9nuNioSZUckS2KGJ6FFc8d6T8UVYq4o5SnwOzUElazLBjx4R6AgrnjOxpiobMbiC-ugxVpRzl1XaofkSLj7A3s1SDgbOf_WPIry9t85hsqmFSpPNd2Hbl9xFVfWeDZ6X5VWTTanTM93TAYv2ymCmcutm9HAF-mA" alt="Sóng siêu âm">
+            <img src="https://login.medlatec.vn//ImagePath/images/20200328/20200328_nguyen-ly-chup-cong-huong-tu-01.jpg" alt="Chụp cộng hưởng từ MRI">
         </div>
-    </section>
-
-    <footer>
-        <div class="info">
-            <div>Số điện thoại: 089 867 0439</div>
-            <div>Email: tranducduy762@gmail.com</div>
+        <div class="box">
+            <h2>Thành viên tổ 4</h2>
+            <ul>
+                <li>Trần Đức Duy</li>
+                <li>Lâm Chân Tú</li>
+                <li>Phạm Thị Như Ý</li>
+                <li>Nguyễn Anh Phúc</li>
+                <li>Trần Vĩnh Phát</li>
+                <li>Nguyễn Nhật Đan</li>
+                <li>Phạm Minh Triết</li>
+                <li>Đặng Xuân Hùng Việt</li>
+                <li>Nguyễn Trung Huy</li>
+                <li>Thang Băng Băng</li>
+                <li>Vũ Ngọc Tuyết Trân</li>
+                <li>Nguyễn Gia Huy</li>
+            </ul>
         </div>
-        <p>&copy; 2025 THPT Nguyễn Du - Khoa Học Kỹ Thuật</p>
-    </footer>
-
-    <script>
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.carousel img');
-        const carouselText = document.getElementById('carousel-text');
-
-        function showSlide(index) {
-            slides.forEach(slide => slide.classList.remove('active'));
-            slides[index].classList.add('active');
-            carouselText.textContent = index === 0 ? 'DỰ ÁN KHOA HỌC KỸ THUẬT 2025' : index === 2 ? 'CÔNG CỤ TÍNH TOÁN NVIDI' : '';
-        }
-
-        function nextSlide() { currentSlide = (currentSlide + 1) % slides.length; showSlide(currentSlide); }
-        function prevSlide() { currentSlide = (currentSlide - 1 + slides.length) % slides.length; showSlide(currentSlide); }
-
-        showSlide(currentSlide); 
-
-        document.getElementById('uploadForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            const fileInput = document.getElementById('fileInput');
-            const resultText = document.getElementById('resultText');
-            const resultImage = document.getElementById('resultImage');
-            if (fileInput.files.length > 0) {
-                const file = fileInput.files[0];
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    resultImage.src = e.target.result;
-                    resultImage.style.display = 'block';
-                    resultText.textContent = 'Ảnh đã tải lên:';
-                };
-                reader.readAsDataURL(file);
-            } else {
-                resultText.textContent = 'Vui lòng chọn một ảnh để tải lên.';
-            }
-        });
-    </script>
+    </div>
+    <div class="footer">&copy; 2025 Tổ 4 - 12A3</div>
 </body>
 </html>
